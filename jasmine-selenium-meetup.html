@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<!--
+  Original Project, HTML5 Rocks 'Slides Template' Copyright 2010 Google Inc.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ 
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+
+  Keydown generates an HTML5 Rocks-style presentation from a Markdown file, adding
+  the ability to full screen backgrounds, CSS overrides, and additional JavaScript.
+
+  Keydown (http://infews.github.com/keydown), Copyright 2010 Infews LLC
+-->
+<html manifest="cache.manifest">
+<head>
+  <!--[if gte IE 9]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"/>
+  <![endif]-->
+
+  <meta charset="utf-8"/>
+  <title>2010.09.30 Jasmine Selenium Meetup</title>
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+
+  <!--
+    Original HTML5 Rocks CSS extracted for readability
+  -->
+  <link href="css/rocks.css" rel="stylesheet" type="text/css"/>
+
+  <!--
+    Keydown provided CSS & your custom CSS
+  -->
+  
+    <link href="css/2010.09.30.SeleniumMeetup.css" rel="stylesheet" type="text/css"/>
+  
+    <link href="css/keydown.css" rel="stylesheet" type="text/css"/>
+  
+
+</head>
+<body>
+<div class="presentation">
+  <div id="presentation-counter"></div>
+  <div class="slides">
+    <!--
+      First slide has Title, Instrucsions & options. Remove (or display:none) this slide if you like
+    -->
+    <div class="slide">
+      <section class="middle">
+        <h1>2010.09.30 Jasmine Selenium Meetup</h1>
+        <p>
+          Press <span class="key"><b>&rarr;</b></span>, scroll, or swipe to advance
+        </p>
+        <h3>
+          Options
+        </h3>
+        <ul>
+          <li>
+            <input type="checkbox" id="toggle-size" />
+            <label for="toggle-size">
+              <span>Grow</span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="toggle-transitions" checked/>
+            <label for="toggle-transitions">
+              <span>Transitions</span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="toggle-gradients" checked/>
+            <label for="toggle-gradients">
+              <span>Gradients</span>
+            </label>
+          </li>
+          <li>
+            <input type="checkbox" id="toggle-counter" checked/>
+            <label for="toggle-counter">
+              <span>Slide numbers</span>
+            </label>
+          </li>
+        </ul>
+        <p>
+          Made with <a href="http://infews.github.com/keydown"><b>Keydown</b></a>
+        </p>
+      </section>
+    </div>
+    
+      <div class="slide">
+  <section class="middle small">
+    <p><img src="images/jasmine_logo.png" alt="Jasmine Logo" /></p>
+
+<h2>SF Selenium Meetup, 2010.09.30</h2>
+
+<h3><a href="mailto:dwfrank@pivotallabs.com">Davis W. Frank</a> | <a href="http://pivotallabs.com">Pivotal Labs</a> | <a href="http://twitter.com/dwfrank">@dwfrank</a></h3>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1>TATFT</h1>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1>What about JavaScript?</h1>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1><em>UT</em>&nbsp;YJSATFT</h1>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1>UTYJSATFT</h1>
+
+<h2>with Jasmine</h2>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;.sqrt&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns the square root of a number&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mi">64</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/simple-example-pass.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1>Expectations</h1>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<pre>
+    As a site administrator
+    I want to obfuscate offensive language
+    So that I don't risk offending my users
+</pre>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;String&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;.cleanUp&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;replaces restricted words with four asterisks&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">filterWords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;golly&quot;</span><span class="p">,</span> <span class="s2">&quot;heck&quot;</span><span class="p">];</span>
+      <span class="nx">dirtyString</span> <span class="o">=</span> <span class="s2">&quot;Golly! What the heck?&quot;</span><span class="p">;</span>
+      <span class="nx">cleanString</span> <span class="o">=</span> <span class="nx">dirtyString</span><span class="p">.</span><span class="nx">cleanUp</span><span class="p">(</span><span class="nx">filterWords</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;****! What the ****?&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>    
+<span class="p">});</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/string-failure.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">cleanUp</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">filterWords</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="nx">filterWords</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">),</span>
+  <span class="nx">regExp</span>  <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="s2">&quot;mig&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regExp</span><span class="p">,</span> <span class="s2">&quot;****&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/string-pass.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>Matchers</h1>
+
+<div class="highlight"><pre><span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;****! What the ****?&quot;</span><span class="p">);</span> 
+<span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">toMatch</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">&quot;\*{3}&quot;</span><span class="p">));</span> 
+<span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">toBeDefined</span><span class="p">();</span> 
+<span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeNull</span><span class="p">();</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeFalsy</span><span class="p">();</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">cleanString</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toContain</span><span class="p">(</span><span class="s2">&quot;golly&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>Custom Matchers</h1>
+
+<div class="highlight"><pre><span class="c1">// top-level beforeEach() call is made before every spec</span>
+<span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addMatchers</span><span class="p">({</span>
+    <span class="nx">toBeCleanedUp</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">actual</span><span class="p">.</span><span class="nx">cleanUp</span><span class="p">(</span><span class="nx">filterWords</span><span class="p">)</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">actual</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;.cleanUp&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">filterWords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;justin&quot;</span><span class="p">,</span> <span class="s2">&quot;bieber&quot;</span><span class="p">];</span>  
+  <span class="p">});</span>
+      
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;replaces restricted words with three asterisks&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="s2">&quot;Justin Bieber: My World&quot;</span><span class="p">).</span><span class="nx">toBeCleanedUp</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;returns strings without restricted language unmodified&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="s2">&quot;The National: High Violet&quot;</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeCleanedUp</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>    
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/custom-matcher-pass.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1>Spies</h1>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;.getTrends&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;requests current trends from Twitter&#39;s search API&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">spyOn</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="s2">&quot;getJSON&quot;</span><span class="p">)</span>
+        
+    <span class="nx">twitterApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TwitterApi</span><span class="p">();</span>
+    <span class="nx">twitterApi</span><span class="p">.</span><span class="nx">getTrends</span><span class="p">();</span>
+        
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span>
+      <span class="s2">&quot;http://search.twitter.com/trends.json?callback=?&quot;</span><span class="p">,</span> 
+      <span class="nx">jasmine</span><span class="p">.</span><span class="nx">any</span><span class="p">(</span><span class="nb">Function</span><span class="p">)</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/spy-not-called.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">TwitterApi</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">trendsUrl</span> <span class="o">=</span> <span class="s2">&quot;http://search.twitter.com/trends.json?callback=?&quot;</span>
+<span class="p">}</span>
+
+<span class="nx">TwitterApi</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">getTrends</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">trendsUrl</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{});</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/spy-called.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">mockResponse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">as_of</span><span class="o">:</span> <span class="s2">&quot;2010-05-18 19:21&quot;</span><span class="p">,</span>
+  <span class="nx">trends</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Woodford Reserve&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://fake.url/woodford-reserve&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Clojure&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://fake.url/clojure&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;iPad&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://fake.url/ipad&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;San Bruno Fire&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://fake.url/san-bruno-fire&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Haruki Murakami&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://fake.url/haruki-murakami&quot;</span><span class="p">}</span>                
+  <span class="p">]</span>
+<span class="p">};</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;TwitterApi&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;responds with an array of current trends&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">spyOn</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="s2">&quot;getJSON&quot;</span><span class="p">)</span>
+       
+    <span class="nx">twitterApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TwitterApi</span><span class="p">();</span>
+
+    <span class="kd">var</span> <span class="nx">trends</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">twitterApi</span><span class="p">.</span><span class="nx">getTrends</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span> 
+      <span class="nx">trends</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span> 
+    <span class="p">});</span>
+
+    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">.</span><span class="nx">mostRecentCall</span><span class="p">.</span><span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="nx">mockResponse</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trends</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trends</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;Clojure&#39;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/spies-array-failure.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">TwitterApi</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">getTrends</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">trendsUrl</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">callback</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="s2">&quot;trends&quot;</span><span class="p">]);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/spies-array-pass.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>Spy Matchers</h1>
+
+<div class="highlight"><pre><span class="nx">spyOn</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="s2">&quot;getJSON&quot;</span><span class="p">);</span>
+
+<span class="nx">expect</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="s2">&quot;http://example.com/service.json&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>Spy Definitions</h1>
+
+<div class="highlight"><pre><span class="nx">spyOn</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">).</span><span class="nx">andCallThrough</span><span class="p">();</span> <span class="c1">// Calls the original function</span>
+<span class="nx">spyOn</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">).</span><span class="nx">andReturn</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// Return 42</span>
+<span class="nx">spyOn</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">).</span><span class="nx">andThrow</span><span class="p">(</span><span class="s2">&quot;Exception&quot;</span><span class="p">);</span> <span class="c1">// Throws an exception</span>
+<span class="nx">spyOn</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">).</span><span class="nx">andCallFake</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="k">return</span> <span class="nx">arg</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span> 
+<span class="p">});</span> <span class="c1">// Substitute with fake anonymous function</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>Spy Properties</h1>
+
+<div class="highlight"><pre><span class="nx">spyOn</span><span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="s2">&quot;getJSON&quot;</span><span class="p">);</span>
+  
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">.</span><span class="nx">callCount</span><span class="p">;</span> <span class="c1">// Number of calls to spy</span>
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">.</span><span class="nx">mostRecentCall</span><span class="p">.</span><span class="nx">args</span><span class="p">;</span> <span class="c1">// Arguments for most recent call to the spy</span>
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">.</span><span class="nx">argsForCall</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// Arguments for a specific call to the spy</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <h1>DOM Fixtures and jQuery</h1>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;TwitterApi&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;trends&quot; /&gt;&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;#jasmine_content&quot;</span><span class="p">);</span> 
+  <span class="p">});</span>
+
+  <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;#trends&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span> <span class="p">});</span>    
+  
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;.updateTrends&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;builds a link for each trend and attaches it to #trends&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">twitterApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TwitterApi</span><span class="p">();</span>
+      <span class="nx">twitterApi</span><span class="p">.</span><span class="nx">updateTrends</span><span class="p">(</span><span class="nx">mockResponse</span><span class="p">.</span><span class="nx">trends</span><span class="p">);</span>
+      <span class="nx">href</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;#trends li a:contains(iPad)&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">href</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;http://fake.url/ipad&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    
+
+<div class="highlight"><pre><span class="nx">TwitterApi</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">updateTrends</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">trends</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">trends</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">trend</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">li</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;&lt;li /&gt;&quot;</span><span class="p">);</span>
+
+      <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;&lt;a /&gt;&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">,</span> <span class="nx">trend</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="s2">&quot;_blank&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">trend</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+
+      <span class="nx">li</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;#trends&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/trends-pass.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle">
+    <p><img src="./images/trends.jpg" alt="Screenshot" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>Jasmine Gem</h1>
+
+<div class="highlight"><pre><span class="nv">$ </span>gem install jasmine
+<span class="nv">$ </span>rails _2.3.5_ app
+<span class="nv">$ </span><span class="nb">cd </span>app
+<span class="nv">$ </span>script/generate jasmine
+   Jasmine has been installed with example specs.
+<span class="nv">$ </span>rake jasmine
+   your tests are here: http://localhost:8888/
+</pre></div>
+
+
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <p><img src="./images/textmate-after-generate.jpg" alt="Textmate" />
+<img src="./images/jasmine-ruby-sample.jpg" alt="Example test run" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section>
+    <h1>No Rails Required</h1>
+
+<div class="highlight"><pre><span class="nv">$ </span>mkdir app
+<span class="nv">$ </span>jasmine init
+</pre></div>
+
+
+<p><img src="./images/jasmine-init.jpg" alt="Textmate" /></p>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="bulleted">
+    <h1>Continuous Integration</h1>
+
+<div class="highlight"><pre><span class="nv">$ </span>rake jasmine:ci
+</pre></div>
+
+
+<ul>
+<li>Uses Selenium to drive the browser and rspec to test expectations</li>
+<li>Works out of the box with CruiseControl.rb, Hudson, Team City, etc.</li>
+</ul>
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="bulleted">
+    <h1>Support</h1>
+
+<p></p>
+
+
+<ul>
+<li>Homepage: <a href="http://pivotal.github.com/jasmine">http://pivotal.github.com/jasmine</a></li>
+<li>Blog: <a href="http://jasmine.pivotallabs.com/blog">http://jasmine.pivotallabs.com/blog</a></li>
+<li>Twitter: <a href="http://twitter.com/jasminebdd">@jasminebdd</a></li>
+<li>Mailing List: <a href="http://groups.google.com/group/jasmine-js">http://groups.google.com/group/jasmine-js</a></li>
+<li>Issues: <a href="http://github.com/pivotal/jasmine/issues">http://github.com/pivotal/jasmine/issues</a></li>
+<li>Backlog: <a href="http://pivotaltracker.com/projects/">http://pivotaltracker.com/projects/</a></li>
+</ul>
+
+
+<br/>
+
+
+<h1>Contribute</h1>
+
+<p></p>
+
+
+<ul>
+<li><a href="http://github.com/pivotal/jasmine">http://github.com/pivotal/jasmine</a></li>
+<li><a href="http://github.com/pivotal/jasmine-gem">http://github.com/pivotal/jasmine-gem</a></li>
+<li><a href="http://github.com/pivotal/jasmine-gem">http://groups.google.com/group/jasmine-js-dev</a></li>
+</ul>
+
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+      <div class="slide">
+  <section class="middle thanks">
+    <h1>Thanks</h1>
+
+<p></p>
+
+
+<h2>expect(jasmine).toBeDefined();</h2>
+
+<p></p>
+
+
+<h3><a href="http://twitter.com/twitterbdd">@jasminedbdd</a></h3>
+
+  </section>
+  <div class="attribution hidden">
+    <a href="">
+      
+    </a>
+  </div>
+</div>
+
+    
+  </div>
+</div>
+
+<!--
+  Original HTML5 Rocks JavaScript extracted for readability
+-->
+<script src="js/rocks.js" type="text/javascript"></script>
+
+<!--[if lt IE 9]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({ mode: "overlay" });</script>
+<![endif]-->
+
+<!--
+  Keydown puts your custom JS here
+-->
+
+<script src="js/2010.09.30.SeleniumMeetup.js" type="text/javascript"></script>
+
+
+</body>
+</html>
